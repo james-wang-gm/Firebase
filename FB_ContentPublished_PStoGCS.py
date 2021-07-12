@@ -50,7 +50,7 @@ class CustomPipelineOptions(PipelineOptions):
             '--path',
             type=str,
             help='Path of the file to read from',
-            default = '{}-analytics-data-lake/Firebase/Content_Published/Notification_Created_testing.json'.format(env))
+            default = '{}-analytics-data-lake/Firebase/Content_Published/Content_Published_testing.json'.format(env))
         parser.add_value_provider_argument(
             '--output',
             type=str,
@@ -69,7 +69,7 @@ def streaming_pipeline(project, region="us-central1"):
         # Make sure staging and temp folder are created using cloud commands
         staging_location="gs://{}-analytics-temp-files/staging".format(env),
         temp_location='gs://{}-analytics-temp-files/temp'.format(env),
-        template_location = 'gs://{}-analytics-temp-files/Firebase/FB_NotificationCreated_PStoGCS.py'.format(env),
+        template_location = 'gs://{}-analytics-temp-files/Firebase/FB_Content_Published_PStoGCS.py'.format(env),
         autoscaling_algorithm = 'THROUGHPUT_BASED',
         max_num_workers = 5
     )
