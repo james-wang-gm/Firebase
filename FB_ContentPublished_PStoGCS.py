@@ -69,7 +69,7 @@ def streaming_pipeline(project, region="us-central1"):
         # Make sure staging and temp folder are created using cloud commands
         staging_location="gs://{}-analytics-temp-files/staging".format(env),
         temp_location='gs://{}-analytics-temp-files/temp'.format(env),
-        template_location = 'gs://{}-analytics-temp-files/Firebase/FB_Content_Published_PStoGCS.py'.format(env),
+        template_location = 'gs://{}-analytics-temp-files/Firebase/FB_ContentPublished_PStoGCS.py'.format(env),
         autoscaling_algorithm = 'THROUGHPUT_BASED',
         max_num_workers = 5
     )
